@@ -21,7 +21,7 @@ class Caso {
   @Column({ name: 'cas_ultimo_lugar', type: 'longtext' })
   ultimoLugar: string;
 
-  @Column({ name: 'cas_ultimo_horario', type: 'longtext' })
+  @Column({ name: 'cas_ultimo_horario', type: 'datetime' })
   ultimoHorario: Date;
 
   @Column({ name: 'cas_contato_quem_viu', type: 'longtext' })
@@ -37,7 +37,7 @@ class Caso {
   maisInfos: string;
 
   @OneToOne(() => Desaparecido)
-  @JoinColumn()
+  @JoinColumn({ name: 'des_codigo' })
   desaparecidoCodigo: number;
 }
 

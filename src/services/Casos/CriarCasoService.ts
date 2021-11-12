@@ -1,3 +1,4 @@
+import { getCustomRepository } from 'typeorm';
 import { CasosRepository } from '../../repositories/CasosRepositories';
 
 interface ICriarCaso {
@@ -24,7 +25,7 @@ class CriarCasoService {
     ultimoHorario,
     ultimoLugar,
   }: ICriarCaso) {
-    const casosRepository = new CasosRepository();
+    const casosRepository = getCustomRepository(CasosRepository);
 
     const novoCaso = casosRepository.create({
       contatoQuemViu,
