@@ -4,5 +4,8 @@
   "port": 3306,
   "username": "root",
   "password": "root",
-  "database": "dory2"
+  "database": "dory2",
+  "cli": {
+    "migrationsDir": "src/database/migrations"
+  }
 }
