@@ -27,6 +27,10 @@ class CriarCasoService {
   }: ICriarCaso) {
     const casosRepository = getCustomRepository(CasosRepository);
 
+    if (!emailQuemViu.length) {
+      throw new Error('Preencha seu email');
+    }
+
     const novoCaso = casosRepository.create({
       contatoQuemViu,
       desaparecidoCodigo,
