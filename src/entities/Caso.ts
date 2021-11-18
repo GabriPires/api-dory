@@ -2,7 +2,7 @@ import {
   Column,
   Entity,
   JoinColumn,
-  OneToOne,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Desaparecido } from './Desaparecido';
@@ -36,7 +36,7 @@ class Caso {
   @Column({ name: 'cas_mais_infos', type: 'longtext' })
   maisInfos: string;
 
-  @OneToOne(() => Desaparecido)
+  @ManyToOne(() => Desaparecido)
   @JoinColumn({ name: 'des_codigo' })
   desaparecidoCodigo: number;
 }
