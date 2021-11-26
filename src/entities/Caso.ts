@@ -3,9 +3,11 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Desaparecido } from './Desaparecido';
+import { Pessoa } from './Pessoa';
 
 @Entity('cas_casos')
 class Caso {
@@ -36,9 +38,12 @@ class Caso {
   @Column({ name: 'cas_mais_infos', type: 'longtext' })
   maisInfos: string;
 
+  @Column({ name: 'des_codigo', type: 'int' })
+  desaparecidoCodigo: number;
+
   @ManyToOne(() => Desaparecido)
   @JoinColumn({ name: 'des_codigo' })
-  desaparecidoCodigo: number;
+  desaparecido: Desaparecido;
 }
 
 export { Caso };
