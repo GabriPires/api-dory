@@ -17,7 +17,7 @@ class Desaparecido {
 
   @OneToOne(() => Pessoa)
   @JoinColumn({ name: 'pes_codigo' })
-  codigoPessoa: number;
+  pessoa: Pessoa;
 }
 
 export { Desaparecido };
