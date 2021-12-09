@@ -48,7 +48,7 @@ class MaisInformacoes {
 
   @OneToOne(() => Desaparecido)
   @JoinColumn({ name: 'des_codigo' })
-  codigoDesaparecido: number;
+  desaparecido: Desaparecido;
 
   @OneToOne(() => Vulneravel)
   @JoinColumn({ name: 'vul_codigo' })
