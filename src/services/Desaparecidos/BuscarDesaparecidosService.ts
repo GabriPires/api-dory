@@ -18,7 +18,14 @@ class BuscarDesaparecidosService {
       throw new Error('Nenhum desaparecido encontrado');
     }
 
-    return desaparecidos;
+    const desaparecidosModificado = desaparecidos.map((desaparecido) => ({
+      ...desaparecido,
+      idade:
+        new Date().getUTCFullYear() -
+        desaparecido.pessoa.nascimento.getUTCFullYear(),
+    }));
+
+    return desaparecidosModificado;
   }
 }
 
